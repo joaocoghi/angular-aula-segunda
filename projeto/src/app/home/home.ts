@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 import {CommonModule} from '@angular/common';
 // Permitir que o Angular gerencie o formulário | Vinculo de botão com métodos
 import {FormsModule} from '@angular/forms';
+import { Atividade } from './atividade';
 
 @Component({
   imports: [CommonModule, FormsModule],
@@ -14,11 +15,21 @@ export class Home {
 // Atributo => Variável de uma classe
   public nome = '';
 // Criando uma lista de atividades
-  public lista = [
-    {id: 1, nome:"Dormir"},
-    {id: 2, nome:"Tomar remédio"}
-  ];
+  public lista: Atividade[] = [];
   public editando: number | null = null;
+
+  adicionar(): void {
+    const atividade: Atividade = {
+      id: this.lista.length,
+      nome: this.nome
+    }
+
+    
+  }
+
+  salvar(): void {
+
+  }
 
   cancelar(): void {
     this.nome = '';
