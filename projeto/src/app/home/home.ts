@@ -44,6 +44,11 @@ export class Home {
 
   excluir(id: number): void{
     this.lista.splice(id, 1);
+
+    for(let i = 0; i < this.lista.length; i++) {
+      this.lista[i].id = i;
+    }
+    
   }
 
   cancelar(): void {
