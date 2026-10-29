@@ -28,7 +28,10 @@
             <!-- Vínculo simples entre o html e TS -> Somente leitura de valores -->
                     <td>{{ atividade.id }}</td>
                     <td>{{ atividade.nome }}</td>
-                    <td>"Editar" | "Excluir"</td>
+                    <td>
+                        <button (click)="editar(atividade)">Editar</button>
+                        <button (click)="excluir(atividade.id)">Excluir</button>
+                    </td>
                 </tr>
             }
 
